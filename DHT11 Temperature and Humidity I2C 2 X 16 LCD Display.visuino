@@ -1,0 +1,269 @@
+{
+  "Version": "2",
+  "Product": "Visuino - Visual Arduino Programming",
+  "Units": [
+    {
+      "Type": "Diagram",
+      "Name": "__OpenWireRootUnit__",
+      "*": [
+        {
+          "X": 704,
+          "Name": "Arduino",
+          "Instance": {
+            "Serial": {
+              "*": [
+                {
+                  "+": "TArduinoHardwareSerial"
+                }
+              ]
+            },
+            "+": "TArduinoBoard",
+            "AnalogInputReference": "Default",
+            "Modules": {
+              "*": [
+                {
+                  "+": "TArduinoEEPROMModule"
+                },
+                {
+                  "+": "TArduinoProcessorModule"
+                },
+                {
+                  "+": "TArduinoWatchdogTimerModule"
+                }
+              ]
+            },
+            "I2CChannels": {
+              "*": [
+                {
+                  "InputPin": {
+                    "SourcePins": [
+                      {
+                        "ID": "__OpenWireRootUnit__.LiquidCrystalDisplay1.OutputPin"
+                      }
+                    ]
+                  },
+                  "+": "TArduinoI2C"
+                }
+              ]
+            },
+            "Digital": {
+              "*": [
+                {
+                  "+": "TArduinoAdditionalDigitalSerial0Channel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalSerial0Channel"
+                },
+                {
+                  "DigitalInputPin": {
+                    "SourcePin": {
+                      "ID": "__OpenWireRootUnit__.HumidityThermometer1.SensorOutputPin"
+                    }
+                  },
+                  "+": "TArduinoAdditionalDigitalInterruptChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMInterruptChannel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMChannel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalChannel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMSPI0Channel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalSPI0Channel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalSPI0Channel"
+                },
+                {
+                  "+": "TArduinoCombinedAnalogDigitalChannel"
+                },
+                {
+                  "+": "TArduinoCombinedAnalogDigitalChannel"
+                },
+                {
+                  "+": "TArduinoCombinedAnalogDigitalChannel"
+                },
+                {
+                  "+": "TArduinoCombinedAnalogDigitalChannel"
+                },
+                {
+                  "+": "TArduinoCombinedAnalogDigitalI2C0Channel"
+                },
+                {
+                  "+": "TArduinoCombinedAnalogDigitalI2C0Channel"
+                }
+              ]
+            },
+            "SPIChannels": {
+              "*": [
+                {
+                  "+": "TArduinoSPI"
+                }
+              ]
+            },
+            "BoardType": "Arduino Uno"
+          },
+          "Type": "Component",
+          "Y": 784
+        },
+        {
+          "X": 704,
+          "Name": "LiquidCrystalDisplay1",
+          "Instance": {
+            "Elements": {
+              "*": [
+                {
+                  "Name": "TextField1",
+                  "+": "TArduinoLiquidCrystalElementTextField",
+                  "InitialValue": "Temp:",
+                  "Width": 10
+                },
+                {
+                  "Name": "AnalogField1",
+                  "InputPin": {
+                    "SourcePin": {
+                      "ID": "__OpenWireRootUnit__.HumidityThermometer1.TemperatureOutputPin"
+                    }
+                  },
+                  "+": "TArduinoLiquidCrystalElementAnalogField",
+                  "Precision": 1,
+                  "Column": 10,
+                  "Width": 4
+                },
+                {
+                  "Row": 1,
+                  "Name": "TextField2",
+                  "+": "TArduinoLiquidCrystalElementTextField",
+                  "InitialValue": "Humidity:",
+                  "Width": 10
+                },
+                {
+                  "Row": 1,
+                  "InputPin": {
+                    "SourcePin": {
+                      "Name": "__OpenWireRootUnit__.HumidityThermometer1.Humidity(%)",
+                      "ID": "__OpenWireRootUnit__.HumidityThermometer1.HumidityOutputPin"
+                    }
+                  },
+                  "+": "TArduinoLiquidCrystalElementAnalogField",
+                  "Precision": 1,
+                  "Column": 10,
+                  "Name": "AnalogField2",
+                  "Width": 4
+                },
+                {
+                  "Pattern": {
+                    "AsString": "12,18,18,12,0,0,0,0"
+                  },
+                  "Name": "DefineCustomCharacter1",
+                  "+": "TArduinoLiquidCrystalElementDefineCustomCharacter"
+                },
+                {
+                  "Column": 15,
+                  "Name": "CustomCharacterField1",
+                  "+": "TArduinoLiquidCrystalElementCustomCharacterField"
+                },
+                {
+                  "Row": 1,
+                  "Name": "TextField3",
+                  "+": "TArduinoLiquidCrystalElementTextField",
+                  "InitialValue": "%",
+                  "Column": 15
+                }
+              ]
+            },
+            "OutputPin": {
+              "SinkPins": [
+                {
+                  "Name": "__OpenWireRootUnit__.Arduino.I2CChannels.I2C.InputPin",
+                  "ID": "__OpenWireRootUnit__.Arduino.I2CChannels._Item0.InputPin"
+                }
+              ]
+            },
+            "+": "TArduinoLiquidCrystalDisplayI2C"
+          },
+          "Type": "Component",
+          "Y": 256
+        },
+        {
+          "X": 464,
+          "Name": "HumidityThermometer1",
+          "Instance": {
+            "ClockInputPin": {
+              "SourcePins": [
+                {
+                  "ID": "__OpenWireRootUnit__.ClockGenerator1.OutputPin"
+                }
+              ]
+            },
+            "SensorOutputPin": {
+              "SinkPins": [
+                {
+                  "Name": "__OpenWireRootUnit__.Arduino.Digital.Digital[ 2 ].DigitalInputPin",
+                  "ID": "__OpenWireRootUnit__.Arduino.Digital._Item2.DigitalInputPin"
+                }
+              ]
+            },
+            "+": "TArduinoDHTSensor",
+            "TemperatureOutputPin": {
+              "SinkPins": [
+                {
+                  "Name": "__OpenWireRootUnit__.LiquidCrystalDisplay1.Elements.AnalogField1.InputPin",
+                  "ID": "__OpenWireRootUnit__.LiquidCrystalDisplay1.Elements._Item1.InputPin"
+                }
+              ]
+            },
+            "HumidityOutputPin": {
+              "SinkPins": [
+                {
+                  "Name": "__OpenWireRootUnit__.LiquidCrystalDisplay1.Elements.AnalogField2.InputPin",
+                  "ID": "__OpenWireRootUnit__.LiquidCrystalDisplay1.Elements._Item3.InputPin"
+                }
+              ]
+            }
+          },
+          "Type": "Component",
+          "Y": 256
+        },
+        {
+          "X": 256,
+          "Name": "ClockGenerator1",
+          "Instance": {
+            "OutputPin": {
+              "SinkPins": [
+                {
+                  "ID": "__OpenWireRootUnit__.HumidityThermometer1.ClockInputPin"
+                }
+              ]
+            },
+            "+": "TArduinoClockGenerator"
+          },
+          "Type": "Component",
+          "Y": 256
+        }
+      ]
+    }
+  ],
+  "Content": "OpenWire Diagram"
+}
